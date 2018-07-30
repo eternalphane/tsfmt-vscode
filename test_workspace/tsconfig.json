@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "module": "es2015",
+        "target": "es6",
+        "outDir": "build",
+        "lib": [
+            "es6"
+        ],
+        "sourceMap": true,
+        "baseUrl": ".",
+        "paths": {
+            "*": [
+                "node_modules/*"
+            ]
+        },
+        "plugins": [
+            {
+                "name": "tslint-language-service",
+                "disableNoUnusedVariableRule": false
+            }
+        ]
+    },
+    "include": [
+        "src"
+    ]
+}

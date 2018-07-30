@@ -1,0 +1,31 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es6",
+        "outDir": "out",
+        "lib": [
+            "es6"
+        ],
+        "sourceMap": true,
+        "baseUrl": ".",
+        "paths": {
+            "*": [
+                "node_modules/*"
+            ]
+        },
+        "plugins": [
+            {
+                "name": "tslint-language-service",
+                "disableNoUnusedVariableRule": false
+            }
+        ],
+        "strict": true,
+        "noUnusedLocals": true,
+        "forceConsistentCasingInFileNames": true
+    },
+    "exclude": [
+        "node_modules",
+        ".vscode-test",
+        "test_workspace"
+    ]
+}
