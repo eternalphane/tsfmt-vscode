@@ -1,16 +1,28 @@
 {
     "name": "tsfmt-vscode",
     "displayName": "tsfmt - TypeScript Formatter",
-    "description": "VSCode plugin for TypeScript Formatter (tsfmt)",
+    "description": "VSCode extension for TypeScript Formatter (tsfmt)",
     "version": "0.1.1",
     "publisher": "eternalphane",
     "author": "Zongyuan Zuo <eternalphane@gmail.com>",
     "license": "MIT",
+    "homepage": "https://github.com/EternalPhane/tsfmt-vscode#readme",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/EternalPhane/tsfmt-vscode.git"
+    },
+    "bugs": {
+        "url": "https://github.com/EternalPhane/tsfmt-vscode/issues"
+    },
     "engines": {
         "vscode": "^1.21.0"
     },
     "categories": [
         "Formatters"
+    ],
+    "keywords": [
+        "tsfmt",
+        "vscode"
     ],
     "activationEvents": [
         "onLanguage:typescript"
