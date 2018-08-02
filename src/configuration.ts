@@ -4,8 +4,12 @@ export function configPath(): string | null {
     return workspace.getConfiguration('tsfmt').get('configPath') || null;
 }
 
-export function editorconfigConfigPath(): string | null {
-    return workspace.getConfiguration('tsfmt').get('editorconfig.configPath') || null;
+export function logLevel(): 'error' | 'warning' | 'information' {
+    return workspace.getConfiguration('tsfmt').get('logLevel') || 'error';
+}
+
+export function tsconfigConfigPath(): string | null {
+    return workspace.getConfiguration('tsfmt').get('tsconfig.configPath') || null;
 }
 
 export function tslintAutoFixEnabled(): boolean {

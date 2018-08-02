@@ -4,7 +4,8 @@ import * as ts from 'typescript';
 import * as tsfmt from 'typescript-formatter';
 import { env, Uri } from 'vscode';
 
-import { configPath, editorconfigConfigPath, tslintConfigPath } from './configuration';
+import { configPath, tsconfigConfigPath, tslintConfigPath } from './configuration';
+import MessageHelper from './message-helper';
 import { findBaseDir, requireFallback } from './util';
 
 export function diagnose(input: string, uri: Uri): ts.Diagnostic[] {
@@ -22,12 +23,19 @@ export async function format(input: string, uri: Uri): Promise<string> {
     const untitled = 'untitled' === uri.scheme;
     const baseDir = findBaseDir(uri);
     const { processString } = requireFallback('typescript-formatter', baseDir) as typeof tsfmt;
+    MessageHelper.show(
+        'Reading settings from files',
+        'information',
+        `tsfmt.json: ${configPath()}
+tsconfig.json: ${tsconfigConfigPath()}
+tslint.json: ${tslintConfigPath()}`
+    );
     return (await processString(uri.fsPath, input, {
         replace: false,
         verify: false,
         baseDir: baseDir || undefined,
-        tsconfig: Boolean(!untitled || editorconfigConfigPath()),
-        tsconfigFile: editorconfigConfigPath(),
+        tsconfig: Boolean(!untitled || tsconfigConfigPath()),
+        tsconfigFile: tsconfigConfigPath(),
         tslint: Boolean(!untitled || tslintConfigPath()),
         tslintFile: tslintConfigPath(),
         editorconfig: !untitled,
