@@ -33,6 +33,22 @@
             "type": "object",
             "title": "TypeScript Formatter (tsfmt) Configuration",
             "properties": {
+                "tsfmt.configPath": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "default": null,
+                    "description": "Path to tsfmt.json. If not specified, the one closest to the formatted file will be used"
+                },
+                "tsfmt.editorconfig.configPath": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "default": null,
+                    "description": "Path to .editorconfig. If not specified, the one closest to the formatted file will be used"
+                },
                 "tsfmt.tslint.autoFix": {
                     "type": "string",
                     "enum": [
@@ -41,6 +57,14 @@
                     ],
                     "default": "disabled",
                     "description": "Fix all auto-fixable tslint failures after formatting"
+                },
+                "tsfmt.tslint.configPath": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "default": null,
+                    "description": "Path to tslint.json. If not specified, the one closest to the formatted file will be used"
                 }
             }
         }
