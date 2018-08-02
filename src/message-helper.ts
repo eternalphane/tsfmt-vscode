@@ -1,5 +1,7 @@
 import { OutputChannel, window } from 'vscode';
 
+import { logLevel } from './configuration';
+
 export default class MessageHelper {
     public static readonly channel: OutputChannel = window.createOutputChannel(
         'TypeScript Formatter'
@@ -29,6 +31,14 @@ export default class MessageHelper {
             warning: 'Warn ',
             error: 'Error'
         }[type];
+        const priority = {
+            information: 0,
+            warning: 1,
+            error: 2
+        };
+        if (priority[type] < priority[logLevel()]) {
+            return;
+        }
         const method = {
             information: 'showInformationMessage',
             warning: 'showWarningMessage',

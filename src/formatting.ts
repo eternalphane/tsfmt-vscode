@@ -4,6 +4,8 @@ import * as ts from 'typescript';
 import * as tsfmt from 'typescript-formatter';
 import { env, Uri } from 'vscode';
 
+import { configPath, tsconfigConfigPath, tslintConfigPath } from './configuration';
+import MessageHelper from './message-helper';
 import { findBaseDir, requireFallback } from './util';
 
 export function diagnose(input: string, uri: Uri): ts.Diagnostic[] {
@@ -21,19 +23,26 @@ export async function format(input: string, uri: Uri): Promise<string> {
     const untitled = 'untitled' === uri.scheme;
     const baseDir = findBaseDir(uri);
     const { processString } = requireFallback('typescript-formatter', baseDir) as typeof tsfmt;
+    MessageHelper.show(
+        null,
+        'information',
+        `tsfmt.json: ${configPath()}
+tsconfig.json: ${tsconfigConfigPath()}
+tslint.json: ${tslintConfigPath()}`
+    );
     return (await processString(uri.fsPath, input, {
         replace: false,
         verify: false,
         baseDir: baseDir || undefined,
-        tsconfig: !untitled,
-        tsconfigFile: null,
-        tslint: !untitled,
-        tslintFile: null,
+        tsconfig: Boolean(!untitled || tsconfigConfigPath()),
+        tsconfigFile: tsconfigConfigPath(),
+        tslint: Boolean(!untitled || tslintConfigPath()),
+        tslintFile: tslintConfigPath(),
         editorconfig: !untitled,
         vscode: !untitled,
         vscodeFile: null,
-        tsfmt: !untitled,
-        tsfmtFile: null,
+        tsfmt: Boolean(!untitled || configPath()),
+        tsfmtFile: configPath(),
         verbose: false
     })).dest;
 }
