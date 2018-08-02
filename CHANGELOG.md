@@ -3,6 +3,11 @@ All notable changes to the "tsfmt-vscode" extension will be documented in this f
 
 ## [Unreleased]
 
+## [v0.2.0] 2018-08-02
+- Add configurations for paths to `tsfmt.json`, `tsconfig.json` and `tslint.json`
+- Add configuration for logging level
+- Fix some typos
+
 ## [v0.1.1] 2018-07-31
 - Add LICENSE.md
 - Update README.md and CHANGELOG.md, add screenshot to README.md
