@@ -16,6 +16,7 @@
         "plugins": [
             {
                 "name": "tslint-language-service",
+                "configFile": "my_tslint.json",
                 "disableNoUnusedVariableRule": false
             }
         ]
