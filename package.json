@@ -40,7 +40,7 @@
                         "disabled"
                     ],
                     "default": "disabled",
-                    "description": "Run 'tslint --fix' after formatting"
+                    "description": "Fix all auto-fixable tslint failures after formatting"
                 }
             }
         }
@@ -49,12 +49,21 @@
         "vscode:prepublish": "npm run compile",
         "compile": "tsc -p ./",
         "watch": "tsc -watch -p ./",
-        "postinstall": "node ./node_modules/vscode/bin/install"
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "bump-version": "ts-node ./script/bump-version.ts",
+        "release": "ts-node ./script/release.ts"
     },
     "devDependencies": {
         "@types/mocha": "^5.2.5",
         "@types/node": "^8.9.0",
+        "@types/request-promise-native": "^1.0.15",
+        "@types/url-template": "^2.0.28",
+        "request": "^2.87.0",
+        "request-promise-native": "^1.0.5",
+        "semver": "^5.5.0",
+        "ts-node": "^7.0.0",
         "tslint-language-service": "^0.9.9",
+        "url-template": "^2.0.8",
         "vscode": "^1.1.18"
     },
     "dependencies": {
