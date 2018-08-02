@@ -28,7 +28,7 @@ import * as ut from 'url-template';
     cp.execSync(`git merge --no-ff ${branch}`, options);
     cp.execSync(`git tag -a v${version} -m "v${version}"`, options);
     cp.execSync(`git branch -d ${branch}`, options);
-    cp.execSync('git push', options);
+    cp.execSync('git push --follow-tags', options);
     cp.execSync('vsce publish', options);
     cp.execSync('vsce package', options);
     const pack = `tsfmt-vscode-${version}.vsix`;
