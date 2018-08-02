@@ -46,7 +46,8 @@ import * as ut from 'url-template';
                 name: `v${version}`,
                 body: releaseInfo
             },
-            json: true
+            json: true,
+            proxy: 'http://127.0.0.1:8118'
         }
     )).upload_url;
     const uploadUrl = ut.parse(rawUploadUrl).expand({ name: pack });
