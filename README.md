@@ -9,7 +9,11 @@ This extension will use `tsfmt`, `tslint` and `typescript` modules installed clo
 ## Extension Settings
 | Key | Type | Description | Default |
 | --- | ---- | ----------- | ------- |
+| tsfmt.configPath | `string \| null` | Path to tsfmt.json. If not specified, the one closest to the formatted file will be used | `null` |
+| tsfmt.logLevel | `"error" \| "warning" \| "information"` | The verbosity of logging in the Output Panel. error < warning < information | `"disabled"` |
+| tsfmt.tsconfig.configPath | `string \| null` | Path to tsconfig.json. If not specified, the one closest to the formatted file will be used | `null` |
 | tsfmt.tslint.autoFix | `"enabled" \| "disabled"` | Fix all auto-fixable tslint failures after formatting | `"disabled"` |
+| tsfmt.tslint.configPath | `string \| null` | Path to tslint.json. If not specified, the one closest to the formatted file will be used | `null` |
 
 ## License
 This software is released under the terms of the MIT license.
