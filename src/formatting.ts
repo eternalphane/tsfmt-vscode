@@ -24,7 +24,7 @@ export async function format(input: string, uri: Uri): Promise<string> {
     const baseDir = findBaseDir(uri);
     const { processString } = requireFallback('typescript-formatter', baseDir) as typeof tsfmt;
     MessageHelper.show(
-        'Reading settings from files',
+        null,
         'information',
         `tsfmt.json: ${configPath()}
 tsconfig.json: ${tsconfigConfigPath()}

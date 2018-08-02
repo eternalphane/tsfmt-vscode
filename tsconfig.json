@@ -26,6 +26,7 @@
     "exclude": [
         "node_modules",
         ".vscode-test",
-        "test_workspace"
+        "test_workspace",
+        "script"
     ]
 }
