@@ -1,6 +1,6 @@
 import { OutputChannel, window } from 'vscode';
 
-import { logLevel } from './configuration';
+import { logLevel, showNotification } from './configuration';
 
 export default class MessageHelper {
     public static readonly channel: OutputChannel = window.createOutputChannel(
@@ -49,7 +49,7 @@ export default class MessageHelper {
         this.channel.appendLine('');
         detail && this.channel.appendLine(detail);
         this.channel.appendLine('');
-        message &&
+        message && showNotification() &&
             window[method](message, ...(detail ? ['OK', 'More...'] : ['OK'])).then((action) => {
                 'More...' === action && this.channel.show();
             });

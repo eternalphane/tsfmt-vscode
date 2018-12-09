@@ -39,7 +39,7 @@
                         "null"
                     ],
                     "default": null,
-                    "description": "Path to tsfmt.json. If not specified, the one closest to the formatted file will be used"
+                    "description": "Path to `tsfmt.json`. If not specified, the one closest to the formatted file will be used"
                 },
                 "tsfmt.logLevel": {
                     "type": "string",
@@ -49,7 +49,16 @@
                         "information"
                     ],
                     "default": "error",
-                    "description": "The verbosity of logging in the Output Panel. error < warning < information"
+                    "description": "The verbosity of logging in the Output Panel. `error` < `warning` < `information`"
+                },
+                "tsfmt.notification": {
+                    "type": "string",
+                    "enum": [
+                        "enabled",
+                        "disabled"
+                    ],
+                    "default": "enabled",
+                    "description": "Whether or not show notifications. This does not affect `tsfmt.logLevel`"
                 },
                 "tsfmt.tsconfig.configPath": {
                     "type": [
@@ -57,7 +66,7 @@
                         "null"
                     ],
                     "default": null,
-                    "description": "Path to tsconfig.json. If not specified, the one closest to the formatted file will be used"
+                    "description": "Path to `tsconfig.json`. If not specified, the one closest to the formatted file will be used"
                 },
                 "tsfmt.tslint.autoFix": {
                     "type": "string",
@@ -74,7 +83,7 @@
                         "null"
                     ],
                     "default": null,
-                    "description": "Path to tslint.json. If not specified, the one closest to the formatted file will be used"
+                    "description": "Path to `tslint.json`. If not specified, the one closest to the formatted file will be used"
                 }
             }
         }
