@@ -8,6 +8,8 @@ export function activate(context: ExtensionContext): void {
     context.subscriptions.push(
         languages.registerDocumentFormattingEditProvider('typescript', provider),
         languages.registerDocumentRangeFormattingEditProvider('typescript', provider),
+        languages.registerDocumentFormattingEditProvider('typescriptreact', provider),
+        languages.registerDocumentRangeFormattingEditProvider('typescriptreact', provider),
         MessageHelper
     );
 }
