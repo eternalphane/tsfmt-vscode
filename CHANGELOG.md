@@ -3,6 +3,9 @@ All notable changes to the "tsfmt-vscode" extension will be documented in this f
 
 ## [Unreleased]
 
+## [v0.3.0] 2018-12-09
+- Fix #1 (Add Configuration for notification)
+
 ## [v0.2.1] 2018-08-02
 - Fix some typos
 

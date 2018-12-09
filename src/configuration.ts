@@ -8,6 +8,10 @@ export function logLevel(): 'error' | 'warning' | 'information' {
     return workspace.getConfiguration('tsfmt').get('logLevel') || 'error';
 }
 
+export function showNotification(): boolean {
+    return workspace.getConfiguration('tsfmt').get('notification') || true;
+}
+
 export function tsconfigConfigPath(): string | null {
     return workspace.getConfiguration('tsfmt').get('tsconfig.configPath') || null;
 }

@@ -32,7 +32,7 @@ import * as ut from 'url-template';
     cp.execSync('vsce publish', options);
     cp.execSync('vsce package', options);
     const pack = `tsfmt-vscode-${version}.vsix`;
-    const token = fs.readFileSync('token', 'utf8');
+    const token = fs.readFileSync(path.resolve(__dirname, 'token'), 'utf8');
     const rawUploadUrl = (await request(
         'https://api.github.com/repos/EternalPhane/tsfmt-vscode/releases', {
             method: 'POST',
