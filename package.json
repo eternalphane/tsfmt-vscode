@@ -58,7 +58,7 @@
                         "disabled"
                     ],
                     "default": "enabled",
-                    "description": "Whether or not show notifications. This does not affect `tsfmt.logLevel`"
+                    "description": "Whether or not to show notifications. This does not affect `tsfmt.logLevel`"
                 },
                 "tsfmt.tsconfig.configPath": {
                     "type": [
