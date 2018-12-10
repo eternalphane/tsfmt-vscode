@@ -1,6 +1,7 @@
 {
     "typescript.tsdk": "node_modules\\typescript\\lib",
     "tsfmt.logLevel": "information",
+    "tsfmt.notification": "disabled",
     "tsfmt.tslint.autoFix": "enabled",
     "tsfmt.tslint.configPath": "my_tslint.json"
 }
