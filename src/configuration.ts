@@ -9,7 +9,7 @@ export function logLevel(): 'error' | 'warning' | 'information' {
 }
 
 export function showNotification(): boolean {
-    return workspace.getConfiguration('tsfmt').get('notification') || true;
+    return 'enabled' === workspace.getConfiguration('tsfmt').get('notification');
 }
 
 export function tsconfigConfigPath(): string | null {

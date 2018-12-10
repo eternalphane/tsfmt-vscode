@@ -3,6 +3,10 @@ All notable changes to the "tsfmt-vscode" extension will be documented in this f
 
 ## [Unreleased]
 
+## [v0.3.1] 2018-12-10
+- Fix #1 (Typos)
+- Merge #2 (Register for tsx)
+
 ## [v0.3.0] 2018-12-09
 - Fix #1 (Add Configuration for notification)
 

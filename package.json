@@ -2,7 +2,7 @@
     "name": "tsfmt-vscode",
     "displayName": "tsfmt - TypeScript Formatter",
     "description": "VSCode extension for TypeScript Formatter (tsfmt)",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "publisher": "eternalphane",
     "author": "Zongyuan Zuo <eternalphane@gmail.com>",
     "license": "MIT",
@@ -58,7 +58,7 @@
                         "disabled"
                     ],
                     "default": "enabled",
-                    "description": "Whether or not show notifications. This does not affect `tsfmt.logLevel`"
+                    "description": "Whether or not to show notifications. This does not affect `tsfmt.logLevel`"
                 },
                 "tsfmt.tsconfig.configPath": {
                     "type": [
