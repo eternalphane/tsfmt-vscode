@@ -8,7 +8,7 @@ import * as ut from 'url-template';
     const version = process.env.npm_package_version!;
     const options = {
         cwd: path.resolve(__dirname, '..'),
-        encoding: 'utf8',
+        encoding: 'utf8' as BufferEncoding,
         windowsHide: true
     };
     cp.execSync('code-insiders -r -w CHANGELOG.md', options);
@@ -22,7 +22,7 @@ import * as ut from 'url-template';
     cp.execSync('git commit -a -m "update CHANGELOG.md"', options);
     const branch = cp.execSync(
         'cmd /c chcp 65001>nul && git symbolic-ref --short HEAD',
-        options as cp.ExecFileSyncOptionsWithStringEncoding
+        options
     );
     cp.execSync('git checkout master', options);
     cp.execSync(`git merge --no-ff ${branch}`, options);

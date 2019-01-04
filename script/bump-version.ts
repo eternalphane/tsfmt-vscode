@@ -1,4 +1,5 @@
 import * as cp from 'child_process';
+import * as fs from 'fs';
 import * as path from 'path';
 import * as semver from 'semver';
 
@@ -10,6 +11,9 @@ const options = {
     cwd: path.resolve(__dirname, '..'),
     windowsHide: true
 };
+fs.unlink(path.resolve(__dirname, `../tsfmt-vscode-${oldVersion}.vsix`), (e) => {
+    // do nothing
+})
 cp.execSync('git stash', options);
 cp.execSync(`git checkout -b ${branch} v${oldVersion}`, options);
 cp.execSync(`npm --no-git-tag-version version ${newVersion}`, options);

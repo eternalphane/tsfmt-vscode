@@ -15,6 +15,7 @@ export function diagnose(input: string, uri: Uri): ts.Diagnostic[] {
     ) as typeof ts;
     return transpileModule(input, {
         compilerOptions: { noEmit: true },
+        fileName: uri.fsPath,
         reportDiagnostics: true
     }).diagnostics!;
 }
