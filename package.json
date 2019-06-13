@@ -2,7 +2,7 @@
     "name": "tsfmt-vscode",
     "displayName": "tsfmt - TypeScript Formatter",
     "description": "VSCode extension for TypeScript Formatter (tsfmt)",
-    "version": "0.3.2",
+    "version": "0.3.3",
     "publisher": "eternalphane",
     "author": "Zongyuan Zuo <eternalphane@gmail.com>",
     "license": "MIT",
