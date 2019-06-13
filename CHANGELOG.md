@@ -3,6 +3,11 @@ All notable changes to the "tsfmt-vscode" extension will be documented in this f
 
 ## [Unreleased]
 
+## [v0.3.3] 2019-06-14
+- Update node dependencies
+- Fix vulnerability
+- Fix some typos
+
 ## [v0.3.2] 2019-01-04
 - Fix #3
 
