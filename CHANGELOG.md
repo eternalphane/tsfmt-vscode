@@ -4,7 +4,7 @@ All notable changes to the "tsfmt-vscode" extension will be documented in this f
 ## [Unreleased]
 
 ## [v0.3.2] 2019-01-04
-- Fix #2
+- Fix #3
 
 ## [v0.3.1] 2018-12-10
 - Fix #1 (Typos)
